@@ -1,6 +1,5 @@
 /.phpunit.cache
 /node_modules
-/public/build
 /public/hot
 /public/storage
 /public/vendor/statamic
@@ -28,4 +27,3 @@ public/js/vendor.js
 public/js/vendor.js.LICENSE.txt
 public/vendor/app/js/cp.js
 public/vendor/
-public/images
