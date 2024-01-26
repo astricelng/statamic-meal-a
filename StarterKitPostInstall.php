@@ -14,7 +14,7 @@ use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
 
-class StatamicMealAPostInstall
+class StarterKitPostInstall
 {
     protected string $env = '';
     protected string $readme = '';
