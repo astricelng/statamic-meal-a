@@ -1,0 +1,283 @@
+tabs:
+  social_media:
+    display: 'Social Media'
+    sections:
+      -
+        display: 'Social media'
+        instructions: 'Configure social media links.'
+        fields:
+          -
+            handle: social_media
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                main:
+                  display: Main
+                  instructions: null
+                  icon: null
+                  sets:
+                    email:
+                      display: Email
+                      instructions: null
+                      icon: social-mail-send-email-message
+                      fields:
+                        -
+                          handle: email
+                          field:
+                            input_type: text
+                            antlers: false
+                            type: text
+                            display: Email
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'mailto:'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    facebook:
+                      display: Facebook
+                      instructions: null
+                      icon: social-facebook
+                      fields:
+                        -
+                          handle: handle
+                          field:
+                            input_type: text
+                            prepend: 'https://www.facebook.com/'
+                            antlers: false
+                            type: text
+                            display: Handle
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'https://www.facebook.com/'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    github:
+                      display: GitHub
+                      instructions: null
+                      icon: social-github
+                      fields:
+                        -
+                          handle: handle
+                          field:
+                            input_type: text
+                            prepend: 'https://www.github.com/'
+                            antlers: false
+                            type: text
+                            display: Handle
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'https://www.github.com/'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    instagram:
+                      display: Instagram
+                      instructions: null
+                      icon: social-instagram
+                      fields:
+                        -
+                          handle: handle
+                          field:
+                            input_type: text
+                            prepend: 'https://www.instagram.com/'
+                            antlers: false
+                            type: text
+                            display: Handle
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'https://www.instagram.com/'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    linkedin:
+                      display: LinkedIn
+                      instructions: null
+                      icon: social-linkedin
+                      fields:
+                        -
+                          handle: handle
+                          field:
+                            input_type: text
+                            prepend: 'https://www.linkedin.com/'
+                            antlers: false
+                            type: text
+                            display: Handle
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'https://www.linkedin.com/'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    pinterest:
+                      display: Pinterest
+                      instructions: null
+                      icon: social-pinterest
+                      fields:
+                        -
+                          handle: handle
+                          field:
+                            input_type: text
+                            prepend: 'https://www.pinterest.com/'
+                            antlers: false
+                            type: text
+                            display: URL
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'https://www.pinterest.com/'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    vimeo:
+                      display: Vimeo
+                      instructions: null
+                      icon: social-vimeo
+                      fields:
+                        -
+                          handle: handle
+                          field:
+                            input_type: text
+                            prepend: 'https://www.vimeo.com/'
+                            antlers: false
+                            type: text
+                            display: Handle
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'https://www.vimeo.com/'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    youtube:
+                      display: YouTube
+                      instructions: null
+                      icon: social-youtube
+                      fields:
+                        -
+                          handle: handle
+                          field:
+                            input_type: text
+                            prepend: 'https://www.youtube.com/'
+                            antlers: false
+                            type: text
+                            display: Handle
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: prefix
+                          field:
+                            default: 'https://www.youtube.com/'
+                            type: hidden
+                            icon: hidden
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: 'Social media'
+              icon: replicator
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

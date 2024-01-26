@@ -1,0 +1,9 @@
+{
+    "name": "astricelng/statamic-meal-a",
+    "extra": {
+        "statamic": {
+            "name": "Gluttonomy Statamic meal",
+            "description": "Starter Kit starter kit"
+        }
+    }
+}

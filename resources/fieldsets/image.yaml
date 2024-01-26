@@ -1,0 +1,25 @@
+title: Image
+fields:
+  -
+    handle: image
+    field: common.image
+    config:
+      width: 50
+  -
+    handle: size
+    field: common.size
+    config:
+      width: 50
+  -
+    handle: caption
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Caption
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

@@ -1,0 +1,252 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: 'Display form'
+        fields:
+          -
+            handle: name
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Name
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+              instructions: 'las instrucciones 2'
+              character_limit: 4
+              default: astrid
+          -
+            handle: email
+            field:
+              input_type: email
+              antlers: false
+              type: text
+              display: 'Email address'
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              default: email@cp.com
+              placeholder: hold
+              validate:
+                - required
+                - email
+              if:
+                name: 'not empty'
+          -
+            handle: message_body
+            field:
+              antlers: false
+              type: textarea
+              display: Message
+              icon: textarea
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - 'required_if:name,blue'
+              instructions: 'las instrucciones'
+              placeholder: hold
+              character_limit: '3'
+              if:
+                name: 'not empty'
+          -
+            handle: numero
+            field:
+              input_type: number
+              antlers: false
+              type: text
+              display: numero
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+                - integer
+                - 'digits:3'
+                - 'between:4,300'
+          -
+            handle: integer_field
+            field:
+              type: integer
+              display: 'Integer Field'
+              icon: integer
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: checkboxes_field
+            field:
+              options:
+                1: primero
+                2: segundo
+                3: tercero
+              inline: true
+              type: checkboxes
+              display: 'Checkboxes Field'
+              icon: checkboxes
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: radio_field
+            field:
+              options:
+                1: Primero
+                2: Segundo
+                3: Tercero
+              inline: false
+              cast_booleans: false
+              type: radio
+              display: 'Radio Field'
+              icon: radio
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - 'required_if:name,blue'
+          -
+            handle: select_field
+            field:
+              options:
+                1: 'Primera opcion'
+                2: 'Segunda opcion'
+                3: 'Tercera opcion'
+              taggable: false
+              push_tags: false
+              placeholder: 'Selecciona una opcion'
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: select
+              display: 'Select Field'
+              icon: select
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: assets_field
+            field:
+              mode: list
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Assets Field'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+                - image
+                - 'mimetypes:image/jpeg'
+                - 'mimes:jpg,png'
+              container: images
+          -
+            handle: consent
+            field:
+              inline_label: 'I agree that my submitted data is being collected and stored.'
+              default: false
+              type: toggle
+              display: Consent
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+                - accepted
+          -
+            handle: spacer_field
+            field:
+              type: spacer
+              display: 'Spacer Field'
+              icon: width
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: url
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: url
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+                - url
+          -
+            handle: password
+            field:
+              input_type: password
+              antlers: false
+              type: text
+              display: password
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: password_confirmation
+            field:
+              input_type: password
+              antlers: false
+              type: text
+              display: 'password confirmation'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+                - 'same:password'

@@ -1,0 +1,48 @@
+title: 'Page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      collapse: true
+      previews: true
+      fullscreen: true
+      sets:
+        interactive:
+          display: Interactive
+          instructions: 'Interactive blocks.'
+          icon: programming-script-code
+          sets:
+            form:
+              display: Form
+              instructions: 'Select and render a form.'
+              icon: mail-chat-bubble-text
+              fields:
+                -
+                  import: form
+            cards:
+              display: Cards
+              instructions: 'Show linkable cards with text.'
+              icon: link
+              fields:
+                -
+                  import: cards
+        text:
+          display: Text
+          instructions: 'Text based blocks.'
+          icon: text-formatting-initial-letter
+          sets:
+            article:
+              display: Article
+              instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
+              icon: text-formatting-image-bottom
+              fields:
+                -
+                  import: article
+      type: replicator
+      display: 'Page builder'
+      icon: replicator
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

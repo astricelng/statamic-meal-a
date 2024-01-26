@@ -1,0 +1,20 @@
+title: Buttons
+fields:
+  -
+    handle: buttons
+    field:
+      fields:
+        -
+          import: button
+      mode: stacked
+      add_row: 'Add button'
+      reorderable: true
+      fullscreen: false
+      type: grid
+      display: Buttons
+      icon: grid
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false

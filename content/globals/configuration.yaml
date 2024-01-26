@@ -1,0 +1,10 @@
+title: Configuration
+data:
+  error_404_entry: 79ffc823-23e3-498e-b6a9-f2f293611d9c
+  copyright_since: 2023
+  privacy_statement_type: pdf
+  privacy_statement_asset: documento-sin-titulo.pdf
+  cookie_notice_type: none
+  show_modal: false
+  show_notifications: true
+  show_errors_description: true

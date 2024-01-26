@@ -1,0 +1,46 @@
+{{#
+    @name Form handler
+    @desc Alpine based form handler used in `resources/views/page_builder/_form.antlers.html`.
+#}}
+
+<!-- statamic-peak-tools::snippets/_form_handler.antlers.html -->
+{{ once }}
+    {{# The Statamic helpers for conditional fields. #}}
+    <script src="/vendor/statamic/frontend/js/helpers.js"></script>
+
+    <script>
+        document.addEventListener('alpine:initializing', () => {
+            Alpine.data('formHandler', () => ({
+                success: false,
+                form: '',
+                init() {
+                    this.form = this.$form(
+                        'post',
+                        this.$refs.form.getAttribute('action'),
+                        JSON.parse(this.$refs.form.getAttribute('x-data')).dynamic_form
+                    )
+                },
+                succesHook() {
+                    {{ success_hook }}
+                },
+                submit() {
+                    this.form.submit()
+                        .then(response => {
+                            this.form.reset()
+                            this.$refs.form.reset()
+                            this.success = true
+                            this.succesHook()
+                            setTimeout(() => {
+                                this.success = false
+                            }, 4500)
+                        })
+                        .then(this.$refs.form.scrollIntoView())
+                        .catch(error => {
+                            this.$focus.focus(document.querySelector('#summary').querySelector('a'))
+                        })
+                }
+            }))
+        })
+    </script>
+{{ /once }}
+<!-- End: statamic-peak-tools::snippets/_form_handler.antlers.html -->

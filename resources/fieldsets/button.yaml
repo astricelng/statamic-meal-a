@@ -1,0 +1,195 @@
+title: Button
+fields:
+  -
+    handle: label
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Label
+      icon: text
+      width: 66
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+  -
+    handle: show_controls
+    field:
+      mode: toggle
+      type: revealer
+      display: 'Show controls'
+      icon: revealer
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: link_type
+    field:
+      options:
+        entry: Entry
+        url: URL
+        email: Email
+        tel: Tel
+      default: entry
+      type: button_group
+      display: 'Link type'
+      icon: button_group
+      width: 66
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        show_controls: 'equals true'
+  -
+    handle: target_blank
+    field:
+      default: false
+      type: toggle
+      display: 'Open in new window'
+      icon: toggle
+      width: 33
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        show_controls: 'equals true'
+  -
+    handle: entry
+    field:
+      max_items: 1
+      mode: default
+      create: true
+      type: entries
+      display: Entry
+      icon: entries
+      width: 50
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        show_controls: 'equals true'
+        link_type: 'equals entry'
+      validate:
+        - 'required_if:{this}.link_type,entry'
+  -
+    handle: url
+    field:
+      input_type: url
+      placeholder: 'https://site.com'
+      antlers: false
+      type: text
+      display: URL
+      icon: text
+      width: 50
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        link_type: 'equals url'
+        show_controls: 'equals true'
+      validate:
+        - 'required_if:{this}.link_type,url'
+  -
+    handle: email
+    field:
+      input_type: email
+      placeholder: info@site.com
+      antlers: false
+      type: text
+      display: E-mail
+      icon: text
+      width: 50
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        link_type: 'equals email'
+        show_controls: 'equals true'
+      validate:
+        - 'required_if:{this}.link_type,email'
+  -
+    handle: tel
+    field:
+      input_type: tel
+      placeholder: '+0 (0)12 345678'
+      antlers: false
+      type: text
+      display: Telephone
+      icon: text
+      width: 50
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        link_type: 'equals tel'
+        show_controls: 'equals true'
+      validate:
+        - 'required_if:{this}.link_type,tel'
+  -
+    handle: button_type
+    field:
+      options:
+        button: Button
+        inline: Inline
+      default: button
+      type: button_group
+      display: 'Button type'
+      icon: button_group
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        show_controls: 'equals true'
+  -
+    handle: attr_title
+    field:
+      input_type: text
+      placeholder: 'Learn more'
+      antlers: false
+      type: text
+      display: Title
+      icon: text
+      width: 50
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        show_controls: 'equals true'
+  -
+    handle: attr_aria
+    field:
+      input_type: text
+      placeholder: 'Download the PDF'
+      antlers: false
+      type: text
+      display: 'Aria label'
+      icon: text
+      width: 50
+      listable: false
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
+      if:
+        show_controls: 'equals true'

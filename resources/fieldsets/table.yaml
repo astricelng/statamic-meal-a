@@ -1,0 +1,57 @@
+title: Table
+fields:
+  -
+    handle: size
+    field: common.size
+  -
+    handle: first_row_headers
+    field:
+      default: false
+      type: toggle
+      display: 'First row as header'
+      icon: toggle
+      instructions: 'Show the first row as header and give it a header styling.'
+      width: 50
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: first_column_headers
+    field:
+      default: false
+      type: toggle
+      display: 'First column as header'
+      icon: toggle
+      instructions: 'Show the first column as header and give it a header styling.'
+      width: 50
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: table
+    field:
+      type: table
+      display: Table
+      icon: table
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: caption
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Caption
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

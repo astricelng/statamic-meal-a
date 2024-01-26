@@ -1,0 +1,215 @@
+tabs:
+  general:
+    display: General
+    sections:
+      -
+        display: 'System pages'
+        instructions: 'Configure system pages.'
+        fields:
+          -
+            handle: error_404_entry
+            field: common.entry
+            config:
+              display: '404'
+              instructions: 'Show all content of page whenever an URL does not exist.'
+              collections:
+                - pages
+              validate:
+                - required
+      -
+        display: Copyright
+        instructions: 'Copyright configuration options.'
+        fields:
+          -
+            handle: copyright_name
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Copyright name'
+              icon: text
+              instructions: 'Falls back to the application name.'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: copyright_since
+            field:
+              input_type: number
+              placeholder: '2023'
+              default: '2023'
+              character_limit: 4
+              prepend: ©
+              antlers: false
+              type: text
+              display: 'Copyright since'
+              icon: text
+              instructions: 'The website will add ` - current_year ` if they differ.'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+      -
+        display: 'Privacy statement'
+        instructions: 'Configure an optional privacy statement.'
+        fields:
+          -
+            handle: privacy_statement_type
+            field:
+              options:
+                none: None
+                entry: Entry
+                pdf: PDF
+              default: none
+              type: button_group
+              display: 'Privacy statement'
+              icon: button_group
+              instructions: 'Form consent fields will link to this Privacy Policy.'
+              width: 50
+              listable: false
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: privacy_statement_asset
+            field:
+              max_files: 1
+              mode: list
+              container: files
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Privacy statement (PDF)'
+              icon: assets
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                privacy_statement_type: 'equals pdf'
+              validate:
+                - 'required_if:privacy_statement_type,pdf'
+          -
+            handle: privacy_statement_entry
+            field:
+              max_items: 1
+              mode: default
+              create: true
+              type: entries
+              display: 'Privacy statement (entry)'
+              icon: entries
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                privacy_statement_type: 'equals entry'
+              validate:
+                - 'required_if:privacy_statement_type,entry'
+      -
+        display: 'Cookie notice'
+        instructions: 'Configure an optional cookie notice.'
+        fields:
+          -
+            handle: cookie_notice_type
+            field:
+              options:
+                none: None
+                entry: Entry
+                pdf: Pdf
+              default: none
+              type: button_group
+              display: 'Cookie notice'
+              icon: button_group
+              instructions: 'The Cookie Banner will link to this Cookie Notice.'
+              width: 50
+              listable: false
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: cookie_notice_asset
+            field: common.image
+            config:
+              container: files
+              display: 'Cookie notice (PDF)'
+              width: 50
+              if:
+                cookie_notice_type: 'equals pdf'
+              validate:
+                - 'required_if:cookie_notice_type,pdf'
+          -
+            handle: cookie_notice_entry
+            field:
+              max_items: 1
+              mode: default
+              create: true
+              type: entries
+              display: 'Cookie notice (entry)'
+              icon: entries
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                cookie_notice_type: 'equals entry'
+              validate:
+                - 'required_if:cookie_notice_type,entry'
+      -
+        display: Form
+        instructions: 'Configure form notifications'
+        fields:
+          -
+            handle: show_modal
+            field:
+              default: false
+              type: toggle
+              display: 'Show modal'
+              icon: toggle
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: show_notifications
+            field:
+              default: false
+              type: toggle
+              display: 'Show notifications'
+              icon: toggle
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: show_errors_description
+            field:
+              default: false
+              type: toggle
+              display: 'Show errors description'
+              icon: toggle
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

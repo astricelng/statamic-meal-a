@@ -1,0 +1,73 @@
+title: Cards
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Title
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: cards
+    field:
+      collapse: accordion
+      previews: true
+      fullscreen: true
+      sets:
+        cards:
+          display: Cards
+          instructions: null
+          icon: null
+          sets:
+            card:
+              display: Card
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Title
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - required
+                -
+                  handle: text
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Text
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: button
+                  field: buttons.buttons
+                  config:
+                    display: Button
+                    max_rows: 1
+      type: replicator
+      display: Cards
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: false
+      hide_display: false
