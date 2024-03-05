@@ -25,6 +25,7 @@ class StarterKitPostInstall
     {
         $this->applyInteractivity($console);
         $this->loadFiles();
+        $this->addCareerForm();
         $this->overwriteEnvWithPresets();
        // $this->initializeGitAndConfigureGitignore();
         $this->installNodeDependencies();
@@ -45,6 +46,17 @@ class StarterKitPostInstall
          * without interaction when a command was run before with `--no-interaction` flag.
          */
         Prompt::interactive($this->interactive);
+    }
+
+    protected function addCareerForm(): void
+    {
+        if (!confirm(label: 'Do you want to create a Career Form?', default: true)) {
+            return;
+        }
+
+        app('files')->put(base_path('resources/forms/car.yaml'), 'aqui');
+
+        info("[✓] Career form created.");
     }
 
     protected function overwriteEnvWithPresets(): void
