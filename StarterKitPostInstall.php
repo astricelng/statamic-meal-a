@@ -15,6 +15,7 @@ use function Laravel\Prompts\warning;
 
 
 use Statamic\Facades\AssetContainer;
+use Statamic\Facades\Form;
 
 
 class StarterKitPostInstall
@@ -60,6 +61,13 @@ class StarterKitPostInstall
         //app('files')->put(base_path('resources/forms/car.yaml'), 'aqui');
         $files = AssetContainer::find('files');
         $files->assetFolder('testfiles')->save();
+
+        $form = Form::make()->handle('career');
+        $form
+            ->handle('career')
+            ->honeypot('fax')
+            ->title('Career')
+            ->save();
 
         info("[✓] Career form created.");
     }
