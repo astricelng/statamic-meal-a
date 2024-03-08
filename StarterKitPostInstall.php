@@ -30,6 +30,7 @@ class StarterKitPostInstall
         $this->applyInteractivity($console);
         $this->loadFiles();
         $this->addCareerForm();
+        $this->addNewsletterForm();
         $this->overwriteEnvWithPresets();
        // $this->initializeGitAndConfigureGitignore();
         $this->installNodeDependencies();
@@ -59,7 +60,7 @@ class StarterKitPostInstall
         }
 
         $files = AssetContainer::find('files');
-        $files->assetFolder('testfiles')->save();
+        $files->assetFolder('career')->save();
 
         $careerForm = app('files')->get(base_path('resources/templates/forms/career.yaml'));
         app('files')->put(base_path('resources/blueprints/forms/career.yaml'), $careerForm);
@@ -72,6 +73,25 @@ class StarterKitPostInstall
             ->save();
 
         info("[✓] Career form created.");
+    }
+
+    protected function addNewsletterForm(): void
+    {
+        if (!confirm(label: 'Do you want to create a Newsletter Form?', default: true)) {
+            return;
+        }
+
+        $newsForm = app('files')->get(base_path('resources/templates/forms/newsletter.yaml'));
+        app('files')->put(base_path('resources/blueprints/forms/newsletter.yaml'), $newsForm);
+
+        $form = Form::make()->handle('newsletter');
+        $form
+            ->handle('newsletter')
+            ->honeypot('fax')
+            ->title('Newsletter')
+            ->save();
+
+        info("[✓] Newsletter form created.");
     }
 
     protected function overwriteEnvWithPresets(): void
