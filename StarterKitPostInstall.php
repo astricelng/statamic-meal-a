@@ -14,6 +14,9 @@ use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
 
+use Statamic\Facades\AssetContainer;
+
+
 class StarterKitPostInstall
 {
     protected string $env = '';
@@ -54,7 +57,9 @@ class StarterKitPostInstall
             return;
         }
 
-        app('files')->put(base_path('resources/forms/car.yaml'), 'aqui');
+        //app('files')->put(base_path('resources/forms/car.yaml'), 'aqui');
+        $files = AssetContainer::find('files');
+        $files->assetFolder('testfiles')->save();
 
         info("[✓] Career form created.");
     }
