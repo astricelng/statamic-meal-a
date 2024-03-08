@@ -58,9 +58,11 @@ class StarterKitPostInstall
             return;
         }
 
-        //app('files')->put(base_path('resources/forms/car.yaml'), 'aqui');
         $files = AssetContainer::find('files');
         $files->assetFolder('testfiles')->save();
+
+        $careerForm = app('files')->get(base_path('resources/templates/forms/career.yaml'));
+        app('files')->put(base_path('resources/blueprints/forms/career.yaml'), $careerForm);
 
         $form = Form::make()->handle('career');
         $form
