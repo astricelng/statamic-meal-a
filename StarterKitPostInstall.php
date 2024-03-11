@@ -29,7 +29,7 @@ class StarterKitPostInstall
     {
         $this->applyInteractivity($console);
         $this->loadFiles();
-        $this->addCareerForm();
+        //$this->addCareerForm();
         $this->addNewsletterForm();
         $this->overwriteEnvWithPresets();
        // $this->initializeGitAndConfigureGitignore();
@@ -53,7 +53,7 @@ class StarterKitPostInstall
         Prompt::interactive($this->interactive);
     }
 
-    protected function addCareerForm(): void
+    /*protected function addCareerForm(): void
     {
         if (!confirm(label: 'Do you want to create a Career Form?', default: true)) {
             return;
@@ -73,13 +73,13 @@ class StarterKitPostInstall
             ->save();
 
         info("[✓] Career form created.");
-    }
+    }*/
 
     protected function addNewsletterForm(): void
     {
-        if (!confirm(label: 'Do you want to create a Newsletter Form?', default: true)) {
+        /*if (!confirm(label: 'Do you want to create a Newsletter Form?', default: true)) {
             return;
-        }
+        }*/
 
         $newsForm = app('files')->get(base_path('resources/templates/forms/newsletter.yaml'));
         app('files')->put(base_path('resources/blueprints/forms/newsletter.yaml'), $newsForm);
@@ -91,7 +91,7 @@ class StarterKitPostInstall
             ->title('Newsletter')
             ->save();
 
-        info("[✓] Newsletter form created.");
+        //info("[✓] Newsletter form created.");
     }
 
     protected function overwriteEnvWithPresets(): void
@@ -217,15 +217,15 @@ class StarterKitPostInstall
     {
         $appName = text(
             label: 'What should be your app name?',
-            placeholder: 'Statamic Peak',
-            default: $this->interactive ? '' : 'Statamic Peak',
+            placeholder: 'Statamic',
+            default: $this->interactive ? '' : 'Statamic',
             required: true,
         );
 
         $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
 
-        $this->replaceInEnv('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
-        $this->replaceInReadme('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
+        $this->replaceInEnv('APP_NAME="Statamic"', "APP_NAME=\"{$appName}\"");
+        $this->replaceInReadme('APP_NAME="Statamic"', "APP_NAME=\"{$appName}\"");
     }
 
     protected function setAppUrl(): void
